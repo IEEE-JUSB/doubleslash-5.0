@@ -26,8 +26,51 @@ body {
 }
 
 @font-face {
-  font-family: "ArtDecoMedium";
-  src: url("/fonts/ArtDecoMedium.woff2") format("woff2");
-  font-weight: 500;
+  font-family: "JosefinSans";
+  src: url("/fonts/JosefinSans-Bold.ttf") format("truetype");
+  font-weight: 700;
   font-display: swap;
+}
+
+@keyframes gradient-shift {
+  from { background-position: 0% 50%; }
+  to   { background-position: 100% 50%; }
+}
+
+@keyframes grid-scroll {
+  to { background-position: 0 64px, 0 0; }
+}
+
+/* animated palette gradient for text and glows */
+.synth-gradient {
+  background-image: linear-gradient(90deg, #FF007F, #1F51FF, #00F0FF, #1F51FF, #FF007F);
+  background-size: 200% 100%;
+  animation: gradient-shift 6s ease-in-out infinite alternate;
+}
+
+.synth-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 30px rgba(255, 0, 127, 0.35));
+}
+
+/* pink to blue only, so white button text stays readable */
+.synth-fill {
+  background-image: linear-gradient(90deg, #FF007F, #1F51FF, #FF007F);
+  background-size: 200% 100%;
+  animation: gradient-shift 3s ease-in-out infinite alternate;
+}
+
+/* perspective floor grid */
+.synth-grid {
+  background-image:
+    linear-gradient(rgba(0, 240, 255, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 0, 127, 0.5) 1px, transparent 1px);
+  background-size: 64px 64px;
+  transform: perspective(500px) rotateX(60deg);
+  transform-origin: center bottom;
+  -webkit-mask-image: linear-gradient(to top, black, transparent);
+  mask-image: linear-gradient(to top, black, transparent);
+  animation: grid-scroll 3s linear infinite;
 }
