@@ -55,7 +55,7 @@ export default function Home({ visible }: ComingSoonProps) {
 
           <DevfolioButton href={DEVFOLIO_URL} onHoverChange={setGlow} />
 
-          <p className="text-base font-bold uppercase leading-tight tracking-wide text-white/80 md:text-right">
+          <p className="text-lg font-bold uppercase leading-tight tracking-wide text-white/80 md:text-right">
             {INFO_LINES.map((line) => (
               <span key={line} className="block">
                 {line}
