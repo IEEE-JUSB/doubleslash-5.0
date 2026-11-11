@@ -16,9 +16,8 @@ export default function Home({ visible }: ComingSoonProps) {
   return (
     <main
       style={{ fontFamily: "JosefinSans, 'JosefinSans Fallback', sans-serif" }}
-      className={`fixed inset-0 overflow-hidden bg-[radial-gradient(ellipse_at_top,#1a1a33_0%,#0D0B26_60%,#080718_100%)] transition-opacity duration-2500 ease-in-out delay-800 ${
-        visible ? "opacity-100" : "opacity-0"
-      }`}
+      className={`fixed inset-0 overflow-hidden bg-[radial-gradient(ellipse_at_top,#1a1a33_0%,#0D0B26_60%,#080718_100%)] transition-opacity duration-2500 ease-in-out delay-800 ${visible ? "opacity-100" : "opacity-0"
+        }`}
     >
       <Backdrop active={glow} />
 
@@ -53,7 +52,18 @@ export default function Home({ visible }: ComingSoonProps) {
             {DATE_LABEL}
           </p>
 
-          <DevfolioButton href={DEVFOLIO_URL} onHoverChange={setGlow} />
+          <div className="flex flex-col items-center gap-4 justify-self-center">
+            <a href={DEVFOLIO_URL} target="_blank" rel="noopener noreferrer">
+              <img
+                src="devfolio.png"
+                alt="DEVFOLIO LOGO"
+                height={32}
+                style={{ height: 32, width: "auto" }}
+              />
+            </a>
+
+            <DevfolioButton hackathonSlug="doubleslash5" theme="dark" />
+          </div>
 
           <p className="text-lg font-bold uppercase leading-tight tracking-wide text-white/80 md:text-right">
             {INFO_LINES.map((line) => (
