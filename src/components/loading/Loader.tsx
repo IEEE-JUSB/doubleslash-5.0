@@ -1,3 +1,5 @@
+import DevfolioButton from "../coming-soon/DevfolioButton";
+
 type LoaderProps = {
   size?: number; // logo width in px
 };
@@ -25,6 +27,7 @@ export default function Loader({ size = 560 }: LoaderProps) {
 
         {/* diffused light band */}
         <div className="shimmer absolute top-[-20%] left-0 h-[140%] w-[22%] bg-white blur-[50px]" />
+        <DevfolioButton hackathonSlug="doubleslash5" theme="dark" />
       </div>
 
       <style>{`
